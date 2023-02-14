@@ -39,4 +39,5 @@ import('node-fetch').then(({default: fetch}) =>
 2) To install, run npm install node-fetch in terminal
 
 UML DIAGRAM:
+![UML Sequence](https://user-images.githubusercontent.com/110798437/218688492-eb60d617-197e-4b04-a3a7-8cdbccd58a9d.png)
 
