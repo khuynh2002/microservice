@@ -35,6 +35,7 @@ import('node-fetch').then(({default: fetch}) =>
     });
 });
 
+
 1) Use node-fetch to fetch the data
 2) To install, run npm install node-fetch in terminal
 
