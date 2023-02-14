@@ -7,36 +7,10 @@ REQUESTING DATA:
 
 RETRIEVING DATA: Example in Javascript
 
-const endpoint = 'http://127.0.0.1:5000/quotes.json';
-
-import('node-fetch').then(({default: fetch}) => 
-{
-    fetch(endpoint)
-    .then(response => {
-    if (response.ok) 
-    {
-        return response.json();
-    }
-    else 
-    {
-        throw new Error(`Error`);
-    }
-    })
-    .then(data => 
-    {
-        const quotes = data.quotes;
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        const {quote, author} = quotes[randomIndex];
-        console.log(`"${quote}" - ${author}`);
-    })
-    .catch(error => 
-    {
-      console.error(error.message);
-    });
-});
+![image](https://user-images.githubusercontent.com/110798437/218689071-9d13e842-da8e-4ea4-86e3-674e1d70902a.png)
 
 
-1) Use node-fetch to fetch the data
+1) Use node-fetch to retrieve the data
 2) To install, run npm install node-fetch in terminal
 
 UML DIAGRAM:
