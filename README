@@ -1,0 +1,61 @@
+#How to request data 
+1) Request data using fetch api/node-fetch
+2) 
+const endpoint = 'http://127.0.0.1:5000/quotes.json';
+
+import('node-fetch').then(({default: fetch}) => 
+  {
+    fetch(endpoint)
+    .then(response => {
+    if (response.ok) 
+    {
+        return response.json();
+    }
+    else 
+    {
+        throw new Error(`Error`);
+    }
+    })....
+3) fetch(endpoint) returns a promise
+4) if the promise status code is 200/resolve (if the specific server can be reached), execute the function within then()
+Note: in my partner's case, the parameter required to decide when to fetch the url would be when the timer ends. 
+
+---------------------------------------------------------------------------------    
+#How to retrieve data (example in javascript)
+
+1) Below is the entire "test.js" code that I used to request and retrieve using fetch api
+2) Retrieving the data comes when the response.json is successfully returned. 
+3) if so, the .then(data =>... is executed and we retrieve the quote and author to display in the console or wherever is needed
+
+EXAMPLE:
+const endpoint = 'http://127.0.0.1:5000/quotes.json';
+
+import('node-fetch').then(({default: fetch}) => 
+{
+    fetch(endpoint)
+    .then(response => {
+    if (response.ok) 
+    {
+        return response.json();
+    }
+    else 
+    {
+        throw new Error(`Error`);
+    }
+    })
+    .then(data => 
+    {
+        const quotes = data.quotes;
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const {quote, author} = quotes[randomIndex];
+        console.log(`"${quote}" - ${author}`);
+    })
+    .catch(error => 
+    {
+      console.error(error.message);
+    });
+});
+-----------------------------------------------------------------------------------------------------------------------
+UML DIAGRAM:
+
+
