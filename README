@@ -1,33 +1,12 @@
-#How to request data 
-1) Request data using fetch api/node-fetch
-2) 
-const endpoint = 'http://127.0.0.1:5000/quotes.json';
+DESCRIPTION - Server that provides a json of quotes related to time. Written in Python and using Flask framework. 
 
-import('node-fetch').then(({default: fetch}) => 
-  {
-    fetch(endpoint)
-    .then(response => {
-    if (response.ok) 
-    {
-        return response.json();
-    }
-    else 
-    {
-        throw new Error(`Error`);
-    }
-    })....
-3) fetch(endpoint) returns a promise
-4) if the promise status code is 200/resolve (if the specific server can be reached), execute the function within then()
-Note: in my partner's case, the parameter required to decide when to fetch the url would be when the timer ends. 
+REQUESTING DATA: 
+1) GET http://127.0.0.1:5000/quotes.json
+2) The response will be a json of quotes/authors
 
----------------------------------------------------------------------------------    
-#How to retrieve data (example in javascript)
 
-1) Below is the entire "test.js" code that I used to request and retrieve using fetch api
-2) Retrieving the data comes when the response.json is successfully returned. 
-3) if so, the .then(data =>... is executed and we retrieve the quote and author to display in the console or wherever is needed
+RETRIEVING DATA: Example in Javascript
 
-EXAMPLE:
 const endpoint = 'http://127.0.0.1:5000/quotes.json';
 
 import('node-fetch').then(({default: fetch}) => 
@@ -55,7 +34,9 @@ import('node-fetch').then(({default: fetch}) =>
       console.error(error.message);
     });
 });
------------------------------------------------------------------------------------------------------------------------
-UML DIAGRAM:
 
+1) Use node-fetch to fetch the data
+2) To install, run npm install node-fetch in terminal
+
+UML DIAGRAM:
 
