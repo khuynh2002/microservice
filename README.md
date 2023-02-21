@@ -2,7 +2,8 @@ DESCRIPTION - Server that provides a json of quotes related to time. Written in 
 
 REQUESTING DATA: 
 1) GET http://127.0.0.1:5000/quotes.json
-2) The response will be a json of quotes/authors
+2) GET http://127.0.0.1:5000/random.json for random quote/author
+3) The response will be a json of quotes/authors
 
 
 RETRIEVING DATA: Example in Javascript
